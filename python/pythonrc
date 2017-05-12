@@ -1,0 +1,48 @@
+def setup():
+    try:
+        import readline
+        import rlcompleter
+        import atexit
+        import os
+        import sys
+        import pprint
+    except ImportError:
+        pass
+    else:
+        if 'libedit' in readline.__doc__:
+            # libedit on osx ruins al the fun, to fix run the following
+            # easy_install -a readline
+            return
+                                                                            
+        readline.parse_and_bind("tab: complete")
+    
+        histfile = os.path.join(os.environ["HOME"], ".pyhistory")
+    
+        if os.path.isfile(histfile):
+            readline.read_history_file(histfile)
+
+        atexit.register(readline.write_history_file, histfile)
+
+        sys.ps1 = "\001\033[0;35m\002>>>\001\033[0m\002 "
+        sys.ps2 = "\001\033[0;33m\002...\001\033[0m\002 "
+    
+        def displayhook(value):
+            if value is not None:
+                __builtins__._ = value
+                pprint.pprint(value)
+
+        sys.displayhook = displayhook
+
+        default_excepthook = sys.excepthook
+
+        def excepthook(*args):
+            sys.stdout.write('\033[31m')
+            default_excepthook(*args)
+            sys.stdout.write('\033[0m')
+            sys.stdout.flush()
+
+        sys.excepthook = excepthook
+
+setup()
+
+del setup

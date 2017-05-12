@@ -1,0 +1,90 @@
+#!/bin/bash
+
+set -e
+
+sudo -v
+
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+function dotfiles_path() {
+	cd $(dirname $(dirname $0))
+	echo $(pwd -P)
+}
+
+DOTFILES=$(dotfiles_path $0)
+
+[ $(uname -s) = "Darwin" ] && MACOS=1
+
+log() {
+  echo -e "\033[1;34m==>\033[1;39m $*\033[0m"
+}
+
+install() {
+  echo "› $2"
+  mkdir -p $(dirname "$HOME/$2")
+  [ -L "$HOME/$2" ] || ln -fs "$DOTFILES/$1" "$HOME/$2"
+}
+
+log "Configuring git:"
+
+git config --global alias.ci "commit"
+git config --global alias.st "status"
+git config --global apply.whitespace "fix"
+git config --global color.branch "auto"
+git config --global color.diff "auto"
+git config --global color.status "auto"
+git config --global color.ui "auto"
+git config --global commit.verbose "true"
+git config --global core.excludesfile "${HOME}/.gitignore"
+git config --global core.mergeoptions "--no-edit"
+git config --global diff.algorithm "patience"
+git config --global diff.compactionheuristic "true"
+git config --global fetch.prune "true"
+git config --global gist.browser "true"
+git config --global help.autocorrect "1"
+git config --global hub.protocol "https"
+git config --global rebase.autostash "true"
+git config --global rebase.autosquash "true"
+git config --global rerere.enabled "true"
+git config --global rerere.autoupdate "true"
+git config --global commit.gpgsign "true"
+git config --global user.signingkey "CB164668"
+
+log "Installing dot files:"
+
+install "git/gitignore" ".gitignore"
+install "fish/tm_properties" ".tm_properties"
+install "fish/config.fish" ".config/fish/config.fish"
+install "fish/functions" ".config/fish/functions"
+install "bash/bash_profile" ".bash_profile"
+install "bash/bashrc" ".bashrc"
+install "ssh/config" ".ssh/config"
+install "ssh/id_rsa.pub" ".ssh/id_rsa.pub"
+install "ssh/id_ed25519.pub" ".ssh/id_ed25519.pub"
+
+if [ $MACOS ]
+then
+  install "textmate/tm_properties" ".tm_properties"
+  install "macos/Brewfile" ".Brewfile"
+
+  log "Installing macOS software:"
+  brew bundle --global
+  
+  log "Configuring software:"
+  ${DOTFILES}/macos/defaults
+  ${DOTFILES}/textmate/bundles
+  
+  # iterm2
+  defaults delete com.googlecode.iterm2 >/dev/null
+  cp "${DOTFILES}/iterm2/com.googlecode.iterm2.plist" "${HOME}/Library/Preferences/com.googlecode.iterm2.plist"
+  defaults read com.googlecode.iterm2 >/dev/null
+fi
+
+FISH_SHELL=$(which fish 2>/dev/null || true)
+if ! [ -z "$FISH_SHELL" ]
+then
+  echo "› changing shell to fish"
+
+  sudo chsh -s $FISH_SHELL $USER 2>/dev/null
+fi
+

@@ -1,0 +1,48 @@
+tap 'caskroom/cask'
+tap 'homebrew/bundle'
+
+brew 'awscli'
+brew 'fish'
+brew 'git'
+brew 'heroku'
+brew 'hub'
+brew 'httpie'
+brew 'jq'
+brew 'terraform'
+
+cask 'adobe-creative-cloud'
+cask 'aerial'
+cask 'alfred'
+cask 'android-file-transfer'
+cask 'cloudapp'
+cask 'docker'
+cask 'doxie'
+cask 'firefox'
+cask 'flash-ppapi'
+cask 'google-chrome'
+cask 'gpgtools'
+cask 'hazel'
+cask 'irccloud'
+cask 'iterm2'
+cask 'navicat-premium-essentials'
+cask 'ngrok'
+cask 'omnigraffle'
+cask 'opera'
+cask 'polymail'
+cask 'postman'
+cask 'skype'
+cask 'slack'
+cask 'sourcetree'
+cask 'spotify'
+cask 'textmate'
+cask 'viscosity'
+cask 'vlc'
+cask 'vmware-fusion'
+
+mas '1password',   id: 443987910
+mas 'divvy',       id: 413857545
+mas 'fantastical', id: 975937182
+mas 'keynote',     id: 409183694
+mas 'numbers',     id: 409203825
+mas 'pages',       id: 409201541
+mas 'paws',        id: 1124077199

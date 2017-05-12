@@ -1,0 +1,18 @@
+#!/bin/bash
+
+BUNDLES="${HOME}/Library/Application Support/TextMate/Bundles"
+
+install () {
+  echo "› installing ${2}"
+  mkdir -p "${BUNDLES}/${2}"
+  pushd "${BUNDLES}/${2}" >/dev/null
+  curl --silent --location --output master.tar.gz https://nodeload.github.com/$1/tar.gz/master
+  tar --strip-components=1 -zxf master.tar.gz
+  rm master.tar.gz
+  popd >/dev/null
+}
+
+#install "textmate/monokai.tmbundle" "Monokai.tmbundle"
+
+install "l15n/fish-tmbundle" "Fish.tmbundle"
+install "aurynn/Terraform.tmbundle" "Terraform.tmbundle"

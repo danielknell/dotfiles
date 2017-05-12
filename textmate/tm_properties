@@ -1,0 +1,78 @@
+# Display
+
+theme            = "D8D5E82E-3D5B-46B5-B38E-8C841C21347D"
+fontName         = "Menlo"
+fontSize         = "11"
+softWrap         = "false"
+wrapColumn       = "80"
+showWrapColumn   = "true"
+showIndentGuides = "false"
+showInvisibles   = "true"
+# invisiblesMap    = ""
+tabSize          = "2"
+softTabs         = "true"
+spellChecking    = "true"
+spellingLanguage = "en_GB"
+
+# Other
+
+# projectDirectory = ""
+# scmStatus        = ""
+# windowTitle      = ""
+# tabTitle         = ""
+# scopeAttributes  = ""
+
+# Saving
+
+saveOnBlur = "true"
+
+# I/O
+
+# binary                    = ""
+encoding                  = "UTF-8"
+lineEndings               = "\n"
+# storeEncodingPerFile      = ""
+# disableExtendedAttributes = ""
+
+followSymbolicLinks       = "true"
+
+# File Filtering Keys
+
+INCLUDES = "{.gitignore,.dockerignore,.env,.style.yapf}"
+EXCLUDES = "{__pycache__}"
+
+excludeDirectoriesInBrowser      = "{$excludeDirectoriesInBrowser,$EXCLUDES}"
+excludeDirectoriesInFileChooser  = "{$excludeDirectoriesInFileChooser,$EXCLUDES}"
+excludeDirectoriesInFolderSearch = "{$excludeDirectoriesInFolderSearch,$EXCLUDES}"
+excludeDirectories               = "{$excludeDirectories,$EXCLUDES}"
+excludeFilesInBrowser            = "{$excludeFilesInBrowser,$EXCLUDES}"
+excludeFilesInFileChooser        = "{$excludeFilesInFileChooser,$EXCLUDES}"
+excludeFilesInFolderSearch       = "{$excludeFilesInFolderSearch,$EXCLUDES}"
+excludeFiles                     = "{$excludeFiles,$EXCLUDES}"
+excludeInBrowser                 = "{$excludeInBrowser,$EXCLUDES}"
+excludeInFileChooser             = "{$excludeInFileChooser,$EXCLUDES}"
+excludeInFolderSearch            = "{$excludeInFolderSearch,$EXCLUDES}"
+exclude                          = "{$exclude,$EXCLUDES}"
+include                          = "{$include,$INCLUDES}"
+includeDirectories               = "{$includeDirectories,$INCLUDES}"
+includeDirectoriesInBrowser      = "{$includeDirectoriesInBrowser,$INCLUDES}"
+includeFiles                     = "{$includeFiles,$INCLUDES}"
+includeFilesInBrowser            = "{$includeFilesInBrowser,$INCLUDES}"
+includeFilesInFileChooser        = "{$includeFilesInFileChooser,$INCLUDES}"
+includeInBrowser                 = "{$includeInBrowser,$INCLUDES}"
+includeInFileChooser             = "{$includeInFileChooser,$INCLUDES}"
+
+[ source.python ]
+tabSize = "4"
+
+[ source.makefile ]
+softTabs = "false"
+
+[ "{README,INSTALL,LICENSE,TODO}" ]
+fileType = "text.plain"
+
+[ "Makefile.*" ]
+fileType = "source.makefile"
+
+[ "Dockerfile.*" ]
+fileType = "source.dockerfile"

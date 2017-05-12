@@ -1,0 +1,14 @@
+Host * !heroku.com
+	RemoteForward 52698 localhost:52698
+
+Host *
+	AddKeysToAgent yes
+	ControlMaster auto
+	ControlPath /tmp/ssh-%r@%h:%p.socket
+	IdentityFile ~/.ssh/id_ed25519
+	IdentityFile ~/.ssh/id_rsa
+	NoHostAuthenticationForLocalhost yes
+	StrictHostKeyChecking ask
+	UseKeychain yes
+	VerifyHostKeyDNS ask
+

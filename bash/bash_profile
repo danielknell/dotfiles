@@ -1,0 +1,20 @@
+
+
+if which hub 2>&1 >/dev/null
+then
+  alias git="hub"
+fi
+
+alias c="clear"
+alias g="git"
+
+
+bash_prompt(){
+  local user=$(whoami)
+  local host=$(hostname | cut -d . -f 1 | tr '[:upper:]' '[:lower:]')
+  local path=$(echo $PWD | sed -e "s|^$HOME|~|")
+
+  PS1="\n\[\e[35m\]${user}\[\e[m\] at \[\e[33m\]${host}\[\e[m\] in \[\e[32m\]${path}\[\e[m\]\n\$ "
+}
+
+PROMPT_COMMAND=bash_prompt

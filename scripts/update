@@ -1,0 +1,22 @@
+#!/bin/sh
+
+set -e
+
+GITHUB_USERNAME=$(git config github.user)
+
+GITHUB_URL="https://nodeload.github.com/$GITHUB_USERNAME/dotfiles/tar.gz/master"
+
+DOTFILES_PATH=$(dirname $(dirname $0))
+
+cd $DOTFILES_PATH
+
+if [ -e .git ]
+then
+  git pull --rebase --autostash
+else
+  curl --progress-bar --location --output dotfiles.tar.gz $GITHUB_URL
+  tar --strip-components=1 -zxf dotfiles.tar.gz
+  rm dotfiles.tar.gz
+fi
+
+./scripts/setup
