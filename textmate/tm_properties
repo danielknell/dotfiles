@@ -37,30 +37,9 @@ lineEndings               = "\n"
 followSymbolicLinks       = "true"
 
 # File Filtering Keys
+exclude = "{$exclude,__pycache__,*.egg-info,node_modules,.git,.cache,.hypothosis,.tox,env}"
+include = "{$include,.coveragerc,.dockerignore,.editorconfig,.env,.gitignore,.isort.cfg,.pylintrc,.style.yapf,.tm_properties,.travis.yml}"
 
-INCLUDES = "{.gitignore,.dockerignore,.env,.style.yapf}"
-EXCLUDES = "{__pycache__}"
-
-excludeDirectoriesInBrowser      = "{$excludeDirectoriesInBrowser,$EXCLUDES}"
-excludeDirectoriesInFileChooser  = "{$excludeDirectoriesInFileChooser,$EXCLUDES}"
-excludeDirectoriesInFolderSearch = "{$excludeDirectoriesInFolderSearch,$EXCLUDES}"
-excludeDirectories               = "{$excludeDirectories,$EXCLUDES}"
-excludeFilesInBrowser            = "{$excludeFilesInBrowser,$EXCLUDES}"
-excludeFilesInFileChooser        = "{$excludeFilesInFileChooser,$EXCLUDES}"
-excludeFilesInFolderSearch       = "{$excludeFilesInFolderSearch,$EXCLUDES}"
-excludeFiles                     = "{$excludeFiles,$EXCLUDES}"
-excludeInBrowser                 = "{$excludeInBrowser,$EXCLUDES}"
-excludeInFileChooser             = "{$excludeInFileChooser,$EXCLUDES}"
-excludeInFolderSearch            = "{$excludeInFolderSearch,$EXCLUDES}"
-exclude                          = "{$exclude,$EXCLUDES}"
-include                          = "{$include,$INCLUDES}"
-includeDirectories               = "{$includeDirectories,$INCLUDES}"
-includeDirectoriesInBrowser      = "{$includeDirectoriesInBrowser,$INCLUDES}"
-includeFiles                     = "{$includeFiles,$INCLUDES}"
-includeFilesInBrowser            = "{$includeFilesInBrowser,$INCLUDES}"
-includeFilesInFileChooser        = "{$includeFilesInFileChooser,$INCLUDES}"
-includeInBrowser                 = "{$includeInBrowser,$INCLUDES}"
-includeInFileChooser             = "{$includeInFileChooser,$INCLUDES}"
 
 [ source.python ]
 tabSize = "4"
@@ -76,3 +55,6 @@ fileType = "source.makefile"
 
 [ "Dockerfile.*" ]
 fileType = "source.dockerfile"
+
+[ "setup.cfg" ]
+fileType = "source.ini"

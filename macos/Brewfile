@@ -14,6 +14,7 @@ cask 'adobe-creative-cloud'
 cask 'aerial'
 cask 'alfred'
 cask 'android-file-transfer'
+cask 'authy'
 cask 'cloudapp'
 cask 'docker'
 cask 'doxie'
@@ -45,4 +46,4 @@ mas 'fantastical', id: 975937182
 mas 'keynote',     id: 409183694
 mas 'numbers',     id: 409203825
 mas 'pages',       id: 409201541
-mas 'paws',        id: 1124077199
+mas 'trello',      id: 1278508951
