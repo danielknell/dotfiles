@@ -21,7 +21,7 @@ cask 'doxie'
 cask 'firefox'
 cask 'flash-ppapi'
 cask 'google-chrome'
-cask 'gpgtools'
+cask 'gpg-suite'
 cask 'hazel'
 cask 'irccloud'
 cask 'iterm2'
@@ -39,6 +39,7 @@ cask 'textmate'
 cask 'viscosity'
 cask 'vlc'
 cask 'vmware-fusion'
+cask 'whatsapp'
 
 mas '1password',   id: 443987910
 mas 'divvy',       id: 413857545
