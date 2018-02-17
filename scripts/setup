@@ -53,7 +53,6 @@ git config --global user.signingkey "CB164668"
 log "Installing dot files:"
 
 install "git/gitignore" ".gitignore"
-install "fish/tm_properties" ".tm_properties"
 install "fish/config.fish" ".config/fish/config.fish"
 install "fish/functions" ".config/fish/functions"
 install "bash/bash_profile" ".bash_profile"
