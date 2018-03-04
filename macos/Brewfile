@@ -32,6 +32,7 @@ cask 'opera'
 cask 'polymail'
 cask 'postman'
 cask 'skype'
+cask 'skyfonts'
 cask 'slack'
 cask 'sourcetree'
 cask 'spotify'
@@ -41,10 +42,11 @@ cask 'vlc'
 cask 'vmware-fusion'
 cask 'whatsapp'
 
-mas '1password',   id: 443987910
-mas 'divvy',       id: 413857545
-mas 'fantastical', id: 975937182
-mas 'keynote',     id: 409183694
-mas 'numbers',     id: 409203825
-mas 'pages',       id: 409201541
-mas 'trello',      id: 1278508951
+mas '1password',      id: 443987910
+mas 'divvy',          id: 413857545
+mas 'fantastical',    id: 975937182
+mas 'keynote',        id: 409183694
+mas 'numbers',        id: 409203825
+mas 'pages',          id: 409201541
+mas 'trello',         id: 1278508951
+mas 'pixelmator-pro', id: 1289583905
