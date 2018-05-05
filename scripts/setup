@@ -49,6 +49,7 @@ git config --global rerere.enabled "true"
 git config --global rerere.autoupdate "true"
 git config --global commit.gpgsign "true"
 git config --global user.signingkey "CB164668"
+git config --global url.git@github.com:.insteadOf "https://github.com/"
 
 log "Installing dot files:"
 
