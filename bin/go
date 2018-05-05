@@ -1,0 +1,9 @@
+#!/bin/sh
+
+docker run --rm \
+  -v "$PWD":"/go/src/$(basename $PWD)" \
+  -w "/go/src/$(basename $PWD)" \
+  -e GOOS="${GOOS:-linux}" \
+  -e GOARCH="${GOARCH:-amd64}" \
+  golang:latest \
+  sh -c "go get -v && go $(printf ' "%q"' "$@")"

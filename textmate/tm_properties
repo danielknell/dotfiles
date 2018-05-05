@@ -40,6 +40,8 @@ followSymbolicLinks       = "true"
 exclude = "{$exclude,__pycache__,*.egg-info,node_modules,.git,.cache,.hypothosis,.tox,env}"
 include = "{$include,.coveragerc,.dockerignore,.editorconfig,.env,.gitignore,.isort.cfg,.pylintrc,.style.yapf,.tm_properties,.travis.yml}"
 
+# variables
+PATH = .bin:$HOME/.dotfiles/bin:/usr/local/bin:$PATH
 
 [ source.python ]
 tabSize = "4"
