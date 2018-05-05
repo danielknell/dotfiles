@@ -9,7 +9,6 @@ brew 'hub'
 brew 'jq'
 brew 'terraform'
 
-cask 'adobe-creative-cloud'
 cask 'aerial'
 cask 'alfred'
 cask 'android-file-transfer'
