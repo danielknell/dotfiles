@@ -41,7 +41,7 @@ cask 'vlc'
 cask 'vmware-fusion'
 cask 'whatsapp'
 
-mas '1password',      id: 443987910
+mas '1password7',     id: 1333542190
 mas 'divvy',          id: 413857545
 mas 'fantastical',    id: 975937182
 mas 'keynote',        id: 409183694
