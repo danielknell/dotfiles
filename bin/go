@@ -1,9 +1,22 @@
 #!/bin/sh
 
+if [ -d "$PWD/.git" ]
+then
+  PACKAGE=$(
+    git remote -v | 
+    grep "^origin\t" | 
+    grep " (fetch)\$" | 
+    cut -f 2 | 
+    cut -d ' ' -f 1 | 
+    sed 's/^git@//g; s/\.git$//g; s/:/\//g;'
+  )
+else
+  PACKAGE=$(basename $PWD)
+fi
+
 docker run --rm \
-  -v "$PWD":"/go/src/$(basename $PWD)" \
-  -w "/go/src/$(basename $PWD)" \
-  -e GOOS="${GOOS:-linux}" \
-  -e GOARCH="${GOARCH:-amd64}" \
-  golang:latest \
-  sh -c "go get -v && go $(printf ' "%q"' "$@")"
+  -v "$PWD/.deps":/go/src \
+  -v "$PWD":"/go/src/${PACKAGE}" \
+  -w "/go/src/${PACKAGE}" \
+  $(env | grep -v "^\(PATH\|TMPDIR\|PWD\)=" | cut -f1 -d= | sed 's/^/-e /') \
+  golang:latest go $@

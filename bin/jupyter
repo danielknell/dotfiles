@@ -1,0 +1,8 @@
+#!/bin/sh
+
+docker run --rm \
+  -p 8888:8888 \
+  -e JUPYTER_LAB_ENABLE=yes \
+  -v "$PWD":/home/jovyan/work \
+  -w /home/jovyan/work \
+  jupyter/datascience-notebook:latest jupyter $@
