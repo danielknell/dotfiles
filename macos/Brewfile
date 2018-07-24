@@ -14,10 +14,10 @@ brew 'terraform'
 cask 'aerial'
 cask 'alfred'
 cask 'android-file-transfer'
-cask 'authy'
 cask 'cloudapp'
 cask 'docker'
 cask 'doxie'
+cask 'expressvpn'
 cask 'firefox'
 cask 'flash-ppapi'
 cask 'google-chrome'
@@ -30,7 +30,6 @@ cask 'navicat-premium-essentials'
 cask 'ngrok'
 cask 'omnigraffle'
 cask 'opera'
-cask 'polymail'
 cask 'postman'
 cask 'sketch'
 cask 'skyfonts'
@@ -41,10 +40,10 @@ cask 'spotify'
 cask 'textmate'
 cask 'viscosity'
 cask 'vlc'
-cask 'vmware-fusion'
 cask 'whatsapp'
 
 mas '1password7',     id: 1333542190
+mas 'boxy',           id: 1053031090
 mas 'divvy',          id: 413857545
 mas 'fantastical',    id: 975937182
 mas 'keynote',        id: 409183694
