@@ -38,7 +38,7 @@ followSymbolicLinks       = "true"
 
 # File Filtering Keys
 exclude = "{$exclude,__pycache__,*.egg-info,node_modules,.git,.cache,.hypothosis,.tox,env}"
-include = "{$include,.coveragerc,.dockerignore,.editorconfig,.env,.gitignore,.isort.cfg,.pylintrc,.style.yapf,.tm_properties,.travis.yml,.drone.yml,.kube.yml,.kube.sec.yml}"
+include = "{$include,.coveragerc,.dockerignore,.gcloudignore,.editorconfig,.env,.gitignore,.isort.cfg,.pylintrc,.storybook,.style.yapf,.tm_properties,.travis.yml,.drone.yml,.kube.yml,.kube.sec.yml,.readthedocs.yml,.npmignore}"
 
 # variables
 PATH = .bin:$HOME/.dotfiles/bin:/usr/local/bin:$PATH

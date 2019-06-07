@@ -2,7 +2,7 @@ tap 'homebrew/cask'
 tap 'homebrew/bundle'
 tap 'drone/drone'
 
-brew 'awscli'
+brew 'direnv'
 brew 'drone'
 brew 'fish'
 brew 'git'
@@ -13,14 +13,14 @@ brew 'terraform'
 
 cask 'aerial'
 cask 'alfred'
-cask 'android-file-transfer'
+cask 'basictex'
 cask 'cloudapp'
 cask 'docker'
 cask 'doxie'
 cask 'expressvpn'
 cask 'firefox'
-cask 'flash-ppapi'
 cask 'google-chrome'
+cask 'google-cloud-sdk'
 cask 'gpg-suite'
 cask 'hazel'
 cask 'irccloud'
@@ -42,8 +42,8 @@ cask 'viscosity'
 cask 'vlc'
 cask 'whatsapp'
 
+
 mas '1password7',     id: 1333542190
-mas 'boxy',           id: 1053031090
 mas 'divvy',          id: 413857545
 mas 'fantastical',    id: 975937182
 mas 'keynote',        id: 409183694

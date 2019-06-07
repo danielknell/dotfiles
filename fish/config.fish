@@ -21,3 +21,5 @@ end
 if [ -d /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin ]
   set -x PATH $PATH /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin/
 end
+
+direnv hook fish | source
